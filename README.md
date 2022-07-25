@@ -13,7 +13,7 @@ This is the origin Pytorch implementation of Diviner in the following paper:
 Diviner aims at exploring the multi-scale stable regularities within time-series data, whose data distribution varies over time. To this end, we propose `Smoothing Filter Attention Mechanism` to filter out random components and adjust the feature scale layer-by-layer. Simultaneously, a `Difference Attention Module` is designed to calculate long- and short- range dependencies by capturing the stable shifts at the corresponding scale. The recipe of our work is to mine constants in change!
 
 <p align="center">
-<img src=".\.img/Framework.png" height = "320" alt="" align=center />
+<img src=".\.img/Framework.png" height = "400" alt="" align=center />
 <br><br>
 <b>Figure 1.</b> The illustration of Diviner framework.
 </p>
@@ -22,7 +22,7 @@ Diviner aims at exploring the multi-scale stable regularities within time-series
 All the data you need have been 
 can be found in the `data` folder. The following figure illustrates a demo of the NPT data. Note that the input of each dataset is standarlized.
 <p align="center">
-<img src=".\.img/Figure1.png" height = "256" alt="" align=center />
+<img src=".\.img/Figure1.png" height = "400" alt="" align=center />
 <br><br>
 <b>Figure 2.</b> An example of the NPT data.
 </p>
