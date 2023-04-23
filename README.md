@@ -1,10 +1,10 @@
-# Diviner: Long-term time series forecasting for 5G cellular network capacity planning
+# Long term 5G network traffic forecasting via modeling non-stationarity with deep learning
 ![Python 3.6.5](https://img.shields.io/badge/python-3.6.5-green.svg?style=plastic)
 ![PyTorch 1.2](https://img.shields.io/badge/PyTorch-1.12.0-orange?style=plastic)
 ![License CC BY-NC-SA](https://img.shields.io/badge/license-CC_BY--NC--SA--green.svg?style=plastic)
 
 This is the origin Pytorch implementation of Diviner in the following paper: 
-[Diviner: Long-term time series forecasting for 5G cellular network capacity planning](???).
+[Long term 5G network traffic forecasting via modeling non-stationarity with deep learning](???).
 
 
 
