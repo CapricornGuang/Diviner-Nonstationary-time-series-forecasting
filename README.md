@@ -4,7 +4,7 @@
 ![License CC BY-NC-SA](https://img.shields.io/badge/license-CC_BY--NC--SA--green.svg?style=plastic)
 
 This is the origin Pytorch implementation of Diviner in the following paper: 
-[Long term 5G network traffic forecasting via modeling non-stationarity with deep learning@Nature Communication Engineering](???).
+Long term 5G network traffic forecasting via modeling non-stationarity with deep learning@[Nature Communication Engineering](???).
 
 
 
