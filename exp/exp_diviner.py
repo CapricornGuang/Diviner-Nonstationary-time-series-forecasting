@@ -2,7 +2,7 @@ from importlib.resources import path
 import torch
 from torch.utils.data import DataLoader
 import os, time
-
+import numpy as np
 from exp.exp_basic import Exp_Basic
 from exp import utils as exp_utils
 
@@ -98,6 +98,8 @@ class Exp_Diviner(Exp_Basic):
         test_dataset, test_loader = self._get_data(mode = 'test')
         print('testing...')
         MSE_records, MAE_records = [], []
+        predict_values = []
+        original_values = []
         for X, y in test_loader:
             with torch.no_grad():
                 mse_res = self._process_one_batch(X, y, loss_flag='mse', dynamic_loss_flag=False, flatten=True, predict_length=self.args.predict_length)
@@ -108,9 +110,13 @@ class Exp_Diviner(Exp_Basic):
                 mse_res['net_out'] = test_dataset.inverse_label_transform(mse_res['net_out'])
                 mae_res['net_out'] = test_dataset.inverse_label_transform(mae_res['net_out'])
             MSE_records.append(mse_res['loss']); MAE_records.append(mae_res['loss'])
+            predict_values.append(out['net_out'])
+            original_values.append(out['label'].detach().cpu().numpy())
         
         MSE = tools.get_average(MSE_records)
         MAE = tools.get_average(MAE_records)
+        np.save('predict_values.npy', predict_values)
+        np.save('original_values.npy', original_values)
         self.model.train()
         print('{}-{} dataset experimental results'.format(self.args.data, self.args.predict_length))
         print('MSE:{}, MAE:{}'.format(MSE, MAE))
